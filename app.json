@@ -1,0 +1,25 @@
+{
+  "expo": {
+    "name": "Garden App",
+    "slug": "garden-app",
+    "version": "1.0.0",
+    "scheme": "garden-app",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.garden.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.garden.app"
+    },
+    "plugins": [
+      "expo-sqlite"
+    ]
+  }
+}

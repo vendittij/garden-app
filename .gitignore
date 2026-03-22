@@ -1,6 +1,7 @@
 # ─── Project-specific exclusions ─────────────────────────────────────────────
 .claude/
 CLAUDE.md
+AGENTS.md
 .mcp.json
 .claude-flow/
 .swarm

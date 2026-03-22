@@ -90,9 +90,36 @@ config/             # EAS, app config
 
 **This blocks GARDEN-3D (3D visualization feature).** Does not block Phase 1 core features.
 
-## iOS Native Files
+## iOS Build Strategy — EAS Build
 
-iOS native project (`ios/`) must be generated on **macOS** via `npx expo prebuild`. Cannot be generated on Windows. Run this step when building for iOS for the first time. Android native files are correctly generated with package `com.garden.app`.
+`ios/` is **not committed** and never will be. EAS Build generates it on a macOS cloud worker on every build.
+
+**Windows development workflow:**
+```bash
+# One-time EAS setup (GARDEN-015)
+npm install -g eas-cli
+eas login
+eas build:configure
+
+# Build dev client (cloud, ~10-25 min) — only needed when native changes
+eas build --profile development --platform ios
+
+# Daily development — hot reload from Windows
+npx expo start --dev-client
+```
+
+**What requires a new EAS build:**
+- New native npm package installed
+- `app.json` plugin config changed
+- iOS permissions added
+
+**What does NOT require a rebuild (just restart Metro):**
+- All JS/TSX changes
+- Pure-JS npm packages
+
+**Prerequisites:** Apple Developer account ($99/yr) + physical iPhone for dev client testing.
+
+Android native files are correctly generated with package `com.garden.app` and are committed.
 
 ## Open Questions / Blockers
 

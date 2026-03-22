@@ -33,7 +33,7 @@ GitHub Issue title: `GARDEN-NNN: Brief description`
 | GARDEN-009 | Smart watering engine | `phase-1` | Open-Meteo integration, water need calc, watering log |
 | GARDEN-010 | Growth tracking + harvest schedule | `phase-1` | Per-plant schedule, days to maturity, harvest window calc |
 | GARDEN-011 | AI photo features | `phase-1` | Gemini Flash integration behind AIVisionService interface. Plant onboarding + progress check. |
-| GARDEN-012 | 3D garden visualization | `phase-1`, `blocked` | Blocked by GARDEN-BJS-001 |
+| GARDEN-012 | 3D garden visualization | `phase-1` | Stack: `@react-three/fiber/native` + `expo-gl` + `@react-three/drei`. See handoff-GARDEN-BJS-001.md. |
 | GARDEN-013 | Harvest tracking + notifications | `phase-1` | Harvest window alerts, log events, missed harvest flags |
 | GARDEN-014 | Auth + user accounts | `phase-1` | Supabase auth, email/password + OAuth |
 | GARDEN-015 | EAS Build + iOS dev workflow | `phase-1`, `native` | EAS project setup, dev client build, Windows → iOS workflow |
@@ -42,9 +42,7 @@ GitHub Issue title: `GARDEN-NNN: Brief description`
 
 ## Spikes
 
-| Ticket | Title | Labels | Notes |
-|--------|-------|--------|-------|
-| GARDEN-BJS-001 | Babylon.js RN 0.83 compatibility | `spike` | Does `@babylonjs/react-native@2.x` support RN 0.83.2? If not, evaluate: Three.js (`@react-three/fiber`), Skia 2D fallback, or downgrade. Unblocks GARDEN-012. |
+_None open._
 
 ---
 
@@ -66,3 +64,4 @@ GitHub Issue title: `GARDEN-NNN: Brief description`
 |--------|-------|-----------|
 | GARDEN-001 | Initial project setup with design doc and gitignore | 885648e |
 | GARDEN-002 | Scaffold Expo bare workflow with core dependencies | 3586520 |
+| GARDEN-BJS-001 | Babylon.js RN 0.83 compatibility spike | Decision: R3F + expo-gl. See docs/handoff-GARDEN-BJS-001.md |

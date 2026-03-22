@@ -24,8 +24,8 @@ Built for public use — multi-user from day one, with the first user being the 
 | AI vision | Google Gemini Flash | Strongest free tier (1,500 req/day), native image support, swappable interface |
 | Weather API | Open-Meteo | Free, no API key, 16-day forecast, 1km resolution, best free data quality. Frost alerts computed in-app from `temperature_2m_min` |
 | Plant data | Bundled SQLite (~500 plants, ~2–5MB) | OpenFarm dump (CC BY-SA) + USDA PLANTS CSV (public domain) + NOAA frost dates for planting windows |
-| 3D rendering | Babylon.js React Native (`@babylonjs/react-native`) | JSI-based native rendering, built-in `ArcRotateCamera` orbit controls, best mobile performance |
-| 3D model strategy | Procedural geometry, cached locally | Generated from growth parameters at runtime — no asset files. Cached per plant instance, updated on growth events |
+| 3D rendering | `@react-three/fiber/native` + `expo-gl` + `@react-three/drei` | JSI via expo-gl (SDK 55 native module), `<OrbitControls>` from drei, procedural Three.js geometry. Babylon.js ruled out — no RN 0.83 support (see GARDEN-BJS-001). |
+| 3D model strategy | Procedural geometry (Three.js primitives), cached locally | Generated from growth parameters at runtime — no asset files. BoxGeometry (beds), CylinderGeometry + SphereGeometry (plants). Cached per plant instance, updated on growth events |
 
 ---
 
@@ -217,7 +217,7 @@ All pre-build research items are resolved:
 | Item | Decision | Notes |
 |---|---|---|
 | Weather API | Open-Meteo | Free, no key, 16-day forecast, 1km resolution. Frost alerts computed in-app. |
-| 3D library | Babylon.js React Native | Bare workflow, JSI rendering, native orbit controls (`ArcRotateCamera`) |
+| 3D library | `@react-three/fiber/native` + `expo-gl` | Spike GARDEN-BJS-001: Babylon.js `@2.0.1` only validated to RN 0.79.4, not compatible with RN 0.83.2. R3F 9.5 peer dep `>=0.78`, expo-gl 55 targets RN 0.83 exactly. Orbit controls via `@react-three/drei`. |
 | Offline sync | PowerSync | Official Supabase connector, YAML sync rules, zero custom sync code |
 | Plant data | OpenFarm + USDA PLANTS + NOAA | CC BY-SA + public domain sources only. ~100–150 records need manual curation. |
 

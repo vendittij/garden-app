@@ -2,6 +2,8 @@
 .claude/
 CLAUDE.md
 .mcp.json
+.claude-flow/
+.swarm
 
 # ─── Environment & secrets ────────────────────────────────────────────────────
 .env

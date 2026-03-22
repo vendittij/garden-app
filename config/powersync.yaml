@@ -1,0 +1,55 @@
+# PowerSync sync rules — Garden App
+#
+# These rules are uploaded to the PowerSync dashboard and control which
+# Supabase rows sync to which user's local SQLite database.
+#
+# Docs: https://docs.powersync.com/usage/sync-rules
+#
+# Status: SCAFFOLD — table definitions will be filled in as each feature
+# ticket (GARDEN-006 through GARDEN-013) defines its schema.
+
+bucket_definitions:
+  # One bucket per authenticated user — each user syncs only their own data.
+  user_data:
+    # Parameter pulled from the PowerSync JWT (set in fetchCredentials).
+    parameters:
+      - name: user_id
+        token_parameter: sub
+
+    data:
+      # GARDEN-006: Garden beds
+      # - SELECT id, user_id, name, type, width_cm, length_cm, created_at
+      #     FROM gardens
+      #    WHERE user_id = bucket.user_id
+      # TODO: uncomment when GARDEN-006 schema is defined
+
+      # GARDEN-007: Plant placements
+      # - SELECT id, garden_id, plant_ref_id, position_x, position_y, planted_at
+      #     FROM plantings
+      #     JOIN gardens ON gardens.id = plantings.garden_id
+      #    WHERE gardens.user_id = bucket.user_id
+      # TODO: uncomment when GARDEN-007 schema is defined
+
+      # GARDEN-009: Watering log
+      # - SELECT id, planting_id, watered_at, amount_ml, source
+      #     FROM watering_logs
+      #     JOIN plantings ON plantings.id = watering_logs.planting_id
+      #     JOIN gardens ON gardens.id = plantings.garden_id
+      #    WHERE gardens.user_id = bucket.user_id
+      # TODO: uncomment when GARDEN-009 schema is defined
+
+      # GARDEN-010: Growth events
+      # - SELECT id, planting_id, event_type, recorded_at, notes
+      #     FROM growth_events
+      #     JOIN plantings ON plantings.id = growth_events.planting_id
+      #     JOIN gardens ON gardens.id = plantings.garden_id
+      #    WHERE gardens.user_id = bucket.user_id
+      # TODO: uncomment when GARDEN-010 schema is defined
+
+      # GARDEN-013: Harvest log
+      # - SELECT id, planting_id, harvested_at, yield_g, notes
+      #     FROM harvest_logs
+      #     JOIN plantings ON plantings.id = harvest_logs.planting_id
+      #     JOIN gardens ON gardens.id = plantings.garden_id
+      #    WHERE gardens.user_id = bucket.user_id
+      # TODO: uncomment when GARDEN-013 schema is defined

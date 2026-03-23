@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Garden App — Navigation Shell Mockup (GARDEN-004)</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #1a1a2e;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    min-height: 100vh;
+    color: #fff;
+  }
+  h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #e8f5e9;
+    letter-spacing: -0.5px;
+  }
+  .subtitle {
+    font-size: 13px;
+    color: #78909c;
+    margin-bottom: 36px;
+  }
+
+  /* Screens row */
+  .screens {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .screen-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .screen-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #78909c;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* Phone frame */
+  .phone {
+    width: 280px;
+    height: 580px;
+    background: #0d1117;
+    border-radius: 40px;
+    border: 2.5px solid #30363d;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.05);
+  }
+  .phone::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 6px;
+    background: #21262d;
+    border-radius: 3px;
+    z-index: 10;
+  }
+
+  /* Status bar */
+  .status-bar {
+    height: 44px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0 24px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #c9d1d9;
+    flex-shrink: 0;
+  }
+  .status-right { display: flex; gap: 6px; align-items: center; }
+  .signal { display: flex; gap: 2px; align-items: flex-end; }
+  .signal span { background: #c9d1d9; border-radius: 1px; width: 3px; }
+
+  /* Navigation header */
+  .nav-header {
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    border-bottom: 1px solid #21262d;
+    flex-shrink: 0;
+  }
+  .nav-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #e6edf3;
+  }
+  .nav-action {
+    width: 28px;
+    height: 28px;
+    border-radius: 14px;
+    background: #2ea043;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+  }
+
+  /* Screen content */
+  .screen-content {
+    flex: 1;
+    overflow: hidden;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .phone-inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  /* Tab bar */
+  .tab-bar {
+    height: 72px;
+    border-top: 1px solid #21262d;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 10px;
+    background: #0d1117;
+    flex-shrink: 0;
+  }
+  .tab {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    cursor: pointer;
+    opacity: 0.4;
+    transition: opacity 0.15s;
+  }
+  .tab.active { opacity: 1; }
+  .tab-icon { font-size: 20px; line-height: 1; }
+  .tab-text {
+    font-size: 9px;
+    font-weight: 600;
+    color: #2ea043;
+    letter-spacing: 0.2px;
+  }
+  .tab.active .tab-text { color: #3fb950; }
+
+  /* Wireframe elements */
+  .card {
+    background: #161b22;
+    border: 1px solid #21262d;
+    border-radius: 12px;
+    padding: 12px;
+  }
+  .card-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #c9d1d9;
+    margin-bottom: 6px;
+  }
+  .card-sub {
+    font-size: 11px;
+    color: #8b949e;
+    line-height: 1.4;
+  }
+  .row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .avatar {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+  .pill {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .pill-green { background: rgba(46,160,67,0.2); color: #3fb950; }
+  .pill-blue { background: rgba(56,139,253,0.2); color: #58a6ff; }
+  .pill-orange { background: rgba(210,153,34,0.2); color: #e3b341; }
+  .pill-red { background: rgba(248,81,73,0.2); color: #f85149; }
+  .skel {
+    height: 10px;
+    background: #21262d;
+    border-radius: 5px;
+    margin: 4px 0;
+  }
+  .skel.short { width: 55%; }
+  .skel.med { width: 75%; }
+  .skel.full { width: 100%; }
+  .progress {
+    height: 4px;
+    background: #21262d;
+    border-radius: 2px;
+    margin-top: 6px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    border-radius: 2px;
+    background: #2ea043;
+  }
+  .divider {
+    height: 1px;
+    background: #21262d;
+    margin: 4px 0;
+  }
+  .section-heading {
+    font-size: 10px;
+    font-weight: 700;
+    color: #8b949e;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 6px;
+  }
+  .big-icon-area {
+    flex: 1;
+    background: #0d2818;
+    border: 1px dashed #2ea043;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 120px;
+  }
+  .big-icon { font-size: 36px; }
+  .big-icon-label { font-size: 11px; color: #3fb950; font-weight: 600; }
+  .badge {
+    position: absolute;
+    top: -2px; right: -4px;
+    background: #f85149;
+    color: #fff;
+    font-size: 8px;
+    font-weight: 700;
+    min-width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 3px;
+  }
+  .tab-wrapper { position: relative; }
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 3px;
+    margin-top: 6px;
+  }
+  .cal-day {
+    aspect-ratio: 1;
+    border-radius: 4px;
+    background: #161b22;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+    color: #8b949e;
+  }
+  .cal-day.has-event { background: rgba(46,160,67,0.25); color: #3fb950; }
+  .cal-day.today { background: #2ea043; color: #fff; font-weight: 700; }
+  .cal-day.water { background: rgba(56,139,253,0.25); color: #58a6ff; }
+  .plant-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .plant-card {
+    background: #161b22;
+    border: 1px solid #21262d;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .plant-emoji { font-size: 22px; }
+  .plant-name { font-size: 11px; font-weight: 600; color: #c9d1d9; }
+  .plant-sub { font-size: 9px; color: #8b949e; }
+  .search-bar {
+    background: #161b22;
+    border: 1px solid #21262d;
+    border-radius: 8px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    gap: 6px;
+    font-size: 11px;
+    color: #8b949e;
+  }
+  .setting-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #21262d;
+  }
+  .setting-left { display: flex; align-items: center; gap: 8px; }
+  .setting-icon {
+    width: 28px; height: 28px;
+    border-radius: 7px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+  }
+  .setting-text { font-size: 12px; color: #c9d1d9; font-weight: 500; }
+  .chevron { color: #8b949e; font-size: 10px; }
+  .toggle {
+    width: 30px; height: 18px;
+    border-radius: 9px;
+    background: #2ea043;
+    position: relative;
+  }
+  .toggle::after {
+    content: '';
+    position: absolute;
+    width: 14px; height: 14px;
+    background: #fff;
+    border-radius: 7px;
+    top: 2px; right: 2px;
+  }
+  .vis-placeholder {
+    flex: 1;
+    background: #0a1628;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 1px dashed #1f6feb;
+    min-height: 100px;
+    position: relative;
+    overflow: hidden;
+  }
+  .vis-grid {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+  }
+  .vis-plant {
+    width: 24px; height: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0;
+  }
+  .vis-leaf { font-size: 14px; line-height: 1; }
+  .vis-stem {
+    width: 2px;
+    background: #2ea043;
+    border-radius: 1px;
+  }
+  .vis-label {
+    font-size: 10px;
+    color: #388bfd;
+    font-weight: 600;
+    z-index: 1;
+  }
+</style>
+</head>
+<body>
+
+<h1>Garden App — Navigation Shell</h1>
+<p class="subtitle">GARDEN-004 · Wireframe mockup · All screens are placeholder content</p>
+
+<div class="screens">
+
+  <!-- GARDEN TAB -->
+  <div class="screen-group">
+    <div class="screen-label">Garden Tab</div>
+    <div class="phone">
+      <div class="phone-inner">
+        <div class="status-bar">
+          <span>9:41</span>
+          <div class="status-right">
+            <div class="signal">
+              <span style="height:4px"></span><span style="height:6px"></span>
+              <span style="height:8px"></span><span style="height:10px"></span>
+            </div>
+            <span>WiFi</span>
+            <span>🔋</span>
+          </div>
+        </div>
+        <div class="nav-header">
+          <span class="nav-title">My Garden</span>
+          <div class="nav-action">＋</div>
+        </div>
+        <div class="screen-content">
+          <!-- 3D vis area -->
+          <div class="vis-placeholder">
+            <div class="vis-label">3D View</div>
+            <div class="vis-grid">
+              <div class="vis-plant"><div class="vis-leaf">🌿</div><div class="vis-stem" style="height:16px"></div></div>
+              <div class="vis-plant"><div class="vis-leaf">🍅</div><div class="vis-stem" style="height:22px"></div></div>
+              <div class="vis-plant"><div class="vis-leaf">🌿</div><div class="vis-stem" style="height:12px"></div></div>
+              <div class="vis-plant"><div class="vis-leaf">🥦</div><div class="vis-stem" style="height:18px"></div></div>
+              <div class="vis-plant"><div class="vis-leaf">🌱</div><div class="vis-stem" style="height:8px"></div></div>
+              <div class="vis-plant"><div class="vis-leaf">🫑</div><div class="vis-stem" style="height:20px"></div></div>
+              <div class="vis-plant"><div class="vis-leaf">🌿</div><div class="vis-stem" style="height:14px"></div></div>
+              <div class="vis-plant"><div class="vis-leaf">🍓</div><div class="vis-stem" style="height:10px"></div></div>
+            </div>
+          </div>
+          <div class="section-heading">Beds</div>
+          <div class="card">
+            <div class="row">
+              <div class="avatar" style="background:#0d2818">🌱</div>
+              <div style="flex:1">
+                <div class="card-title">Raised Bed A</div>
+                <div class="card-sub">6 plants · 4×8 ft raised bed</div>
+                <div class="progress"><div class="progress-fill" style="width:65%"></div></div>
+              </div>
+              <span class="pill pill-green">Good</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="row">
+              <div class="avatar" style="background:#1a1206">🍅</div>
+              <div style="flex:1">
+                <div class="card-title">Tomato Corner</div>
+                <div class="card-sub">3 plants · container</div>
+                <div class="progress"><div class="progress-fill" style="width:40%;background:#e3b341"></div></div>
+              </div>
+              <span class="pill pill-orange">Water</span>
+            </div>
+          </div>
+        </div>
+        <div class="tab-bar">
+          <div class="tab active"><div class="tab-icon">🌿</div><div class="tab-text">Garden</div></div>
+          <div class="tab"><div class="tab-icon">📅</div><div class="tab-text">Planner</div></div>
+          <div class="tab"><div class="tab-icon">🔍</div><div class="tab-text">Plants</div></div>
+          <div class="tab"><div class="tab-icon">📷</div><div class="tab-text">Camera</div></div>
+          <div class="tab"><div class="tab-icon">⚙️</div><div class="tab-text">Settings</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PLANNER TAB -->
+  <div class="screen-group">
+    <div class="screen-label">Planner Tab</div>
+    <div class="phone">
+      <div class="phone-inner">
+        <div class="status-bar">
+          <span>9:41</span>
+          <div class="status-right"><span>WiFi</span><span>🔋</span></div>
+        </div>
+        <div class="nav-header">
+          <span class="nav-title">Planner</span>
+        </div>
+        <div class="screen-content">
+          <div class="card">
+            <div class="card-title">March 2026</div>
+            <div class="calendar-grid">
+              <div class="cal-day" style="color:#556068">S</div>
+              <div class="cal-day" style="color:#556068">M</div>
+              <div class="cal-day" style="color:#556068">T</div>
+              <div class="cal-day" style="color:#556068">W</div>
+              <div class="cal-day" style="color:#556068">T</div>
+              <div class="cal-day" style="color:#556068">F</div>
+              <div class="cal-day" style="color:#556068">S</div>
+              <div class="cal-day"></div>
+              <div class="cal-day"></div>
+              <div class="cal-day"></div>
+              <div class="cal-day"></div>
+              <div class="cal-day"></div>
+              <div class="cal-day has-event">7</div>
+              <div class="cal-day">8</div>
+              <div class="cal-day water">9</div>
+              <div class="cal-day">10</div>
+              <div class="cal-day has-event">11</div>
+              <div class="cal-day">12</div>
+              <div class="cal-day water">13</div>
+              <div class="cal-day">14</div>
+              <div class="cal-day">15</div>
+              <div class="cal-day water">16</div>
+              <div class="cal-day has-event">17</div>
+              <div class="cal-day">18</div>
+              <div class="cal-day">19</div>
+              <div class="cal-day water">20</div>
+              <div class="cal-day">21</div>
+              <div class="cal-day today">22</div>
+              <div class="cal-day water">23</div>
+            </div>
+            <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
+              <span class="pill pill-green">🌿 Plant event</span>
+              <span class="pill pill-blue">💧 Water day</span>
+            </div>
+          </div>
+          <div class="section-heading">Today</div>
+          <div class="card">
+            <div class="row">
+              <span style="font-size:18px">💧</span>
+              <div style="flex:1">
+                <div class="card-title">Water Raised Bed A</div>
+                <div class="card-sub">Tomatoes + basil need water today</div>
+              </div>
+              <span class="pill pill-blue">Now</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="row">
+              <span style="font-size:18px">🌡️</span>
+              <div style="flex:1">
+                <div class="card-title">Frost alert in 3 days</div>
+                <div class="card-sub">Cover tender plants Mar 25</div>
+              </div>
+              <span class="pill pill-orange">Alert</span>
+            </div>
+          </div>
+        </div>
+        <div class="tab-bar">
+          <div class="tab"><div class="tab-icon">🌿</div><div class="tab-text">Garden</div></div>
+          <div class="tab active"><div class="tab-icon">📅</div><div class="tab-text">Planner</div></div>
+          <div class="tab"><div class="tab-icon">🔍</div><div class="tab-text">Plants</div></div>
+          <div class="tab"><div class="tab-icon">📷</div><div class="tab-text">Camera</div></div>
+          <div class="tab"><div class="tab-icon">⚙️</div><div class="tab-text">Settings</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PLANTS TAB -->
+  <div class="screen-group">
+    <div class="screen-label">Plants Tab</div>
+    <div class="phone">
+      <div class="phone-inner">
+        <div class="status-bar">
+          <span>9:41</span>
+          <div class="status-right"><span>WiFi</span><span>🔋</span></div>
+        </div>
+        <div class="nav-header">
+          <span class="nav-title">Plant Database</span>
+        </div>
+        <div class="screen-content">
+          <div class="search-bar">
+            <span>🔍</span>
+            <span>Search 500 plants…</span>
+          </div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap">
+            <span class="pill pill-green">Vegetables</span>
+            <span class="pill pill-blue">Herbs</span>
+            <span class="pill pill-orange">Fruits</span>
+            <span class="pill" style="background:#21262d;color:#8b949e">All</span>
+          </div>
+          <div class="section-heading">Popular</div>
+          <div class="plant-grid">
+            <div class="plant-card">
+              <div class="plant-emoji">🍅</div>
+              <div class="plant-name">Tomato</div>
+              <div class="plant-sub">60–80 days</div>
+              <span class="pill pill-orange" style="margin-top:4px">High water</span>
+            </div>
+            <div class="plant-card">
+              <div class="plant-emoji">🥦</div>
+              <div class="plant-name">Broccoli</div>
+              <div class="plant-sub">50–65 days</div>
+              <span class="pill pill-blue" style="margin-top:4px">Med water</span>
+            </div>
+            <div class="plant-card">
+              <div class="plant-emoji">🌿</div>
+              <div class="plant-name">Basil</div>
+              <div class="plant-sub">25–30 days</div>
+              <span class="pill pill-green" style="margin-top:4px">Low water</span>
+            </div>
+            <div class="plant-card">
+              <div class="plant-emoji">🥕</div>
+              <div class="plant-name">Carrot</div>
+              <div class="plant-sub">70–80 days</div>
+              <span class="pill pill-blue" style="margin-top:4px">Med water</span>
+            </div>
+          </div>
+        </div>
+        <div class="tab-bar">
+          <div class="tab"><div class="tab-icon">🌿</div><div class="tab-text">Garden</div></div>
+          <div class="tab"><div class="tab-icon">📅</div><div class="tab-text">Planner</div></div>
+          <div class="tab active"><div class="tab-icon">🔍</div><div class="tab-text">Plants</div></div>
+          <div class="tab"><div class="tab-icon">📷</div><div class="tab-text">Camera</div></div>
+          <div class="tab"><div class="tab-icon">⚙️</div><div class="tab-text">Settings</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAMERA TAB -->
+  <div class="screen-group">
+    <div class="screen-label">Camera Tab</div>
+    <div class="phone">
+      <div class="phone-inner">
+        <div class="status-bar">
+          <span>9:41</span>
+          <div class="status-right"><span>WiFi</span><span>🔋</span></div>
+        </div>
+        <div class="nav-header">
+          <span class="nav-title">AI Camera</span>
+        </div>
+        <div class="screen-content">
+          <div class="big-icon-area" style="min-height:200px;background:#0a1a0a">
+            <div class="big-icon">📷</div>
+            <div class="big-icon-label">Camera viewfinder</div>
+            <div style="font-size:10px;color:#8b949e;text-align:center;padding:0 20px">
+              Point at your plant to analyze
+            </div>
+          </div>
+          <div style="display:flex;gap:8px">
+            <div class="card" style="flex:1;align-items:center;display:flex;flex-direction:column;gap:4px;padding:12px 8px">
+              <span style="font-size:22px">🌱</span>
+              <div style="font-size:10px;font-weight:600;color:#c9d1d9;text-align:center">Onboard Plant</div>
+              <div style="font-size:9px;color:#8b949e;text-align:center">Detect growth stage</div>
+            </div>
+            <div class="card" style="flex:1;align-items:center;display:flex;flex-direction:column;gap:4px;padding:12px 8px">
+              <span style="font-size:22px">📊</span>
+              <div style="font-size:10px;font-weight:600;color:#c9d1d9;text-align:center">Progress Check</div>
+              <div style="font-size:9px;color:#8b949e;text-align:center">Compare to schedule</div>
+            </div>
+          </div>
+          <div class="section-heading">Recent Photos</div>
+          <div class="card">
+            <div class="row">
+              <div class="avatar" style="background:#0d1a0d;font-size:22px">🍅</div>
+              <div style="flex:1">
+                <div class="card-title">Tomato — Bed A</div>
+                <div class="card-sub">2 days ago · Early vegetative</div>
+              </div>
+              <span class="pill pill-green">On track</span>
+            </div>
+          </div>
+        </div>
+        <div class="tab-bar">
+          <div class="tab"><div class="tab-icon">🌿</div><div class="tab-text">Garden</div></div>
+          <div class="tab"><div class="tab-icon">📅</div><div class="tab-text">Planner</div></div>
+          <div class="tab"><div class="tab-icon">🔍</div><div class="tab-text">Plants</div></div>
+          <div class="tab active"><div class="tab-icon">📷</div><div class="tab-text">Camera</div></div>
+          <div class="tab"><div class="tab-icon">⚙️</div><div class="tab-text">Settings</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS TAB -->
+  <div class="screen-group">
+    <div class="screen-label">Settings Tab</div>
+    <div class="phone">
+      <div class="phone-inner">
+        <div class="status-bar">
+          <span>9:41</span>
+          <div class="status-right"><span>WiFi</span><span>🔋</span></div>
+        </div>
+        <div class="nav-header">
+          <span class="nav-title">Settings</span>
+        </div>
+        <div class="screen-content">
+          <!-- Profile -->
+          <div class="card">
+            <div class="row">
+              <div class="avatar" style="background:#1a1a2e;font-size:24px;width:44px;height:44px;border-radius:22px">👤</div>
+              <div style="flex:1">
+                <div class="card-title">Sign In</div>
+                <div class="card-sub">Sync your garden across devices</div>
+              </div>
+              <span class="pill pill-blue">GARDEN-014</span>
+            </div>
+          </div>
+
+          <div class="section-heading">Garden</div>
+          <div class="setting-row">
+            <div class="setting-left">
+              <div class="setting-icon" style="background:#0d2818">🗺️</div>
+              <span class="setting-text">Growing Zone</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px">
+              <span style="font-size:11px;color:#8b949e">Zone 7b</span>
+              <span class="chevron">›</span>
+            </div>
+          </div>
+          <div class="setting-row">
+            <div class="setting-left">
+              <div class="setting-icon" style="background:#0d1a2e">📍</div>
+              <span class="setting-text">Location</span>
+            </div>
+            <span class="chevron">›</span>
+          </div>
+
+          <div class="section-heading">Notifications</div>
+          <div class="setting-row">
+            <div class="setting-left">
+              <div class="setting-icon" style="background:#1a0d0d">💧</div>
+              <span class="setting-text">Watering reminders</span>
+            </div>
+            <div class="toggle"></div>
+          </div>
+          <div class="setting-row">
+            <div class="setting-left">
+              <div class="setting-icon" style="background:#1a1206">🌾</div>
+              <span class="setting-text">Harvest alerts</span>
+            </div>
+            <div class="toggle"></div>
+          </div>
+          <div class="setting-row">
+            <div class="setting-left">
+              <div class="setting-icon" style="background:#0d1a2e">🌡️</div>
+              <span class="setting-text">Frost & weather alerts</span>
+            </div>
+            <div class="toggle"></div>
+          </div>
+        </div>
+        <div class="tab-bar">
+          <div class="tab"><div class="tab-icon">🌿</div><div class="tab-text">Garden</div></div>
+          <div class="tab"><div class="tab-icon">📅</div><div class="tab-text">Planner</div></div>
+          <div class="tab"><div class="tab-icon">🔍</div><div class="tab-text">Plants</div></div>
+          <div class="tab"><div class="tab-icon">📷</div><div class="tab-text">Camera</div></div>
+          <div class="tab active"><div class="tab-icon">⚙️</div><div class="tab-text">Settings</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div style="margin-top:40px;padding:16px 24px;background:#161b22;border:1px solid #21262d;border-radius:12px;max-width:760px;width:100%">
+  <div style="font-size:13px;font-weight:700;color:#c9d1d9;margin-bottom:12px">Screen inventory (GARDEN-004 scope)</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;font-size:11px;color:#8b949e">
+    <div>🌿 <strong style="color:#c9d1d9">GardenScreen</strong> — bed list + 3D entry</div>
+    <div>🏡 <strong style="color:#c9d1d9">BedDetailScreen</strong> — plants in a bed</div>
+    <div>🎮 <strong style="color:#c9d1d9">GardenVisualizationScreen</strong> — R3F 3D view</div>
+    <div>📅 <strong style="color:#c9d1d9">PlannerScreen</strong> — calendar + tasks</div>
+    <div>💧 <strong style="color:#c9d1d9">WateringDetailScreen</strong> — watering log</div>
+    <div>🌾 <strong style="color:#c9d1d9">HarvestDetailScreen</strong> — harvest log</div>
+    <div>🔍 <strong style="color:#c9d1d9">PlantBrowserScreen</strong> — search DB</div>
+    <div>🌱 <strong style="color:#c9d1d9">PlantReferenceDetailScreen</strong> — plant info</div>
+    <div>📷 <strong style="color:#c9d1d9">CameraScreen</strong> — AI photo</div>
+    <div>⚙️ <strong style="color:#c9d1d9">SettingsScreen</strong> — prefs + auth entry</div>
+    <div>🗺️ <strong style="color:#c9d1d9">ZoneSettingsScreen</strong> — zone + location</div>
+    <div>🔐 <strong style="color:#c9d1d9">LoginScreen</strong> — placeholder for GARDEN-014</div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -223,7 +223,43 @@ All pre-build research items are resolved:
 
 ---
 
-## 9. Key Design Principles
+## 9. Implementation Decisions (GARDEN-005)
+
+Decisions made during implementation that clarify or extend the design above.
+
+### Plant database schema
+
+The `planting_windows` table stores **frost-relative offsets per plant species** (not static zone/week numbers). One row per plant. Fields:
+
+| Field | Meaning |
+|---|---|
+| `direct_sow_weeks_from_last_frost` | Weeks after spring last-frost to direct sow. Negative = before last frost. |
+| `transplant_weeks_from_last_frost` | Same reference, for transplanting outdoors. |
+| `direct_sow_weeks_from_first_frost` | Weeks before autumn first-frost (fall-planted crops, e.g. garlic). |
+| `min_soil_temp_f` | Minimum soil temperature for germination (°F). |
+| `weeks_before_first_frost_to_harvest` | For frost-sensitive plants: harvest must begin this many weeks before first frost. NULL = frost-tolerant/perennial. |
+
+GARDEN-008 holds the user's frost dates (from GPS/zip + NOAA). It combines those dates with these offsets to produce actual calendar planting dates. This keeps the plant database zone-independent.
+
+### Bundled database delivery (iOS/Android)
+
+`assets/plants.db` is bundled as an Expo asset. On first launch, `src/database/plantDbInit.ts` copies it from the asset bundle to the app's SQLite directory using `expo-asset` + `expo-file-system`. Subsequent launches skip the copy. The database is opened read-only with `expo-sqlite`.
+
+### Seed-first build strategy
+
+`assets/plants.db` ships with a curated seed set of 24 plants (`scripts/seed-plants.json`) for initial development and testing. The full ~500-plant build runs via `npm run build:plant-db`, which fetches from the OpenFarm API, after the schema and service are validated against the seed set.
+
+### FTS5 search index
+
+A SQLite FTS5 virtual table (`plants_fts`) is maintained over `plants.common_name` and `plants.botanical_name` via triggers. `PlantDatabase.searchPlants()` uses prefix matching (`term*`) for fast type-ahead search.
+
+### water_needs_detail
+
+In addition to the `water_needs` enum (`low`/`medium`/`high`), each plant has a `water_needs_detail` free-text field with specific guidance (e.g. irrigation method, drought sensitivity, timing notes).
+
+---
+
+## 10. Key Design Principles
 
 - **Offline-first** — core value never requires internet
 - **Reality-grounded** — schedules adjust to what's actually happening, not just the calendar

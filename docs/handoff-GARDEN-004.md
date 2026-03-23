@@ -2,7 +2,7 @@
 
 **Branch:** `GARDEN-004-navigation-shell`
 **Base:** `develop`
-**Status:** In Progress
+**Status:** Complete — ready for PR
 
 ---
 
@@ -99,7 +99,8 @@ Using a `<Text>` emoji component as tab icons. No icon library added — avoids 
 - [x] `tests/App.test.tsx` — 3 passing smoke tests
 - [x] Lint passing (0 errors, 0 warnings)
 - [x] Tests passing (12/12)
-- [ ] Committed
+- [x] Committed: `db4263a`
+- [ ] PR raised to `develop`
 
 ---
 
@@ -113,4 +114,4 @@ Using a `<Text>` emoji component as tab icons. No icon library added — avoids 
 
 ## Last Updated
 
-2026-03-22 — Shell complete. All navigators wired, lint clean, tests green, ready for commit review.
+2026-03-22 — Committed. Ready for PR to develop.

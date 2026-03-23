@@ -1,0 +1,963 @@
+{
+  "plants": [
+    {
+      "id": "tomato",
+      "common_name": "Tomato",
+      "botanical_name": "Solanum lycopersicum",
+      "category": "vegetable",
+      "days_to_germination_min": 6,
+      "days_to_germination_max": 14,
+      "days_to_maturity_min": 60,
+      "days_to_maturity_max": 85,
+      "spacing_in_row_inches": 24,
+      "spacing_between_rows_inches": 36,
+      "water_needs": "medium",
+      "water_needs_detail": "1–2 inches per week; water deeply and consistently; avoid wetting foliage",
+      "sun_requirements": "full-sun",
+      "frost_tolerant": false,
+      "frost_tolerance_detail": "Killed by frost; transplant after last frost date",
+      "description": "Warm-season fruit grown as an annual. One of the most popular home garden vegetables.",
+      "harvest_indicators": "Fruit is fully coloured, slightly soft to touch, and separates easily from the vine",
+      "source": "seed",
+      "growth_stages": [
+        { "stage_name": "germination", "stage_order": 1, "height_cm_min": 0, "height_cm_max": 2, "description": "Seed sprouts; cotyledons emerge", "duration_days": 10 },
+        { "stage_name": "seedling", "stage_order": 2, "height_cm_min": 2, "height_cm_max": 15, "description": "True leaves develop; grow indoors 6–8 weeks before transplant", "duration_days": 42 },
+        { "stage_name": "vegetative", "stage_order": 3, "height_cm_min": 15, "height_cm_max": 90, "description": "Rapid stem and leaf growth; stake or cage plant", "duration_days": 30 },
+        { "stage_name": "flowering", "stage_order": 4, "height_cm_min": 60, "height_cm_max": 120, "description": "Yellow flowers appear; pollination required for fruit set", "duration_days": 14 },
+        { "stage_name": "fruiting", "stage_order": 5, "height_cm_min": 60, "height_cm_max": 150, "description": "Green fruits develop and swell; 45–70 days to ripening", "duration_days": 55 },
+        { "stage_name": "harvest", "stage_order": 6, "height_cm_min": 60, "height_cm_max": 150, "description": "Fruits ripen to full colour over several weeks", "duration_days": 30 }
+      ],
+      "companions": [
+        { "companion_id": "basil", "relationship": "beneficial", "notes": "Repels aphids and spider mites; may improve flavour" },
+        { "companion_id": "carrot", "relationship": "beneficial", "notes": "Carrots loosen soil around tomato roots" },
+        { "companion_id": "fennel", "relationship": "antagonistic", "notes": "Fennel inhibits tomato growth" }
+      ],
+      "planting_window": {
+        "can_direct_sow": false,
+        "can_transplant": true,
+        "direct_sow_weeks_from_last_frost": null,
+        "transplant_weeks_from_last_frost": 1,
+        "direct_sow_weeks_from_first_frost": null,
+        "transplant_weeks_from_first_frost": null,
+        "min_soil_temp_f": 60,
+        "weeks_before_first_frost_to_harvest": 12
+      }
+    },
+    {
+      "id": "basil",
+      "common_name": "Basil",
+      "botanical_name": "Ocimum basilicum",
+      "category": "herb",
+      "days_to_germination_min": 5,
+      "days_to_germination_max": 10,
+      "days_to_maturity_min": 25,
+      "days_to_maturity_max": 35,
+      "spacing_in_row_inches": 10,
+      "spacing_between_rows_inches": 12,
+      "water_needs": "medium",
+      "water_needs_detail": "Keep evenly moist; avoid soggy soil; wilts quickly when dry",
+      "sun_requirements": "full-sun",
+      "frost_tolerant": false,
+      "frost_tolerance_detail": "Very frost sensitive; even light frost damages leaves",
+      "description": "Aromatic annual herb used extensively in cooking. Pinch flowers to extend leaf harvest.",
+      "harvest_indicators": "Harvest leaves before flowers form; pick from top to encourage bushy growth",
+      "source": "seed",
+      "growth_stages": [
+        { "stage_name": "germination", "stage_order": 1, "height_cm_min": 0, "height_cm_max": 2, "description": "Seed sprouts in warm soil", "duration_days": 7 },
+        { "stage_name": "seedling", "stage_order": 2, "height_cm_min": 2, "height_cm_max": 10, "description": "First true leaves appear", "duration_days": 14 },
+        { "stage_name": "vegetative", "stage_order": 3, "height_cm_min": 10, "height_cm_max": 45, "description": "Bushy growth; regular harvesting keeps plant productive", "duration_days": 60 },
+        { "stage_name": "flowering", "stage_order": 4, "height_cm_min": 30, "height_cm_max": 60, "description": "Flower spikes form; pinch to delay and maintain leaf production", "duration_days": 30 }
+      ],
+      "companions": [
+        { "companion_id": "tomato", "relationship": "beneficial", "notes": "Classic companion; repels pests and may enhance tomato flavour" },
+        { "companion_id": "pepper", "relationship": "beneficial", "notes": "Repels aphids and spider mites" }
+      ],
+      "planting_window": {
+        "can_direct_sow": true,
+        "can_transplant": true,
+        "direct_sow_weeks_from_last_frost": 1,
+        "transplant_weeks_from_last_frost": 1,
+        "direct_sow_weeks_from_first_frost": null,
+        "transplant_weeks_from_first_frost": null,
+        "min_soil_temp_f": 65,
+        "weeks_before_first_frost_to_harvest": 6
+      }
+    },
+    {
+      "id": "carrot",
+      "common_name": "Carrot",
+      "botanical_name": "Daucus carota subsp. sativus",
+      "category": "vegetable",
+      "days_to_germination_min": 10,
+      "days_to_germination_max": 21,
+      "days_to_maturity_min": 70,
+      "days_to_maturity_max": 80,
+      "spacing_in_row_inches": 3,
+      "spacing_between_rows_inches": 12,
+      "water_needs": "medium",
+      "water_needs_detail": "1 inch per week; consistent moisture prevents splitting; reduce as roots near maturity",
+      "sun_requirements": "full-sun",
+      "frost_tolerant": true,
+      "frost_tolerance_detail": "Tolerates light frost; flavour improves after frost",
+      "description": "Cool-season root vegetable. Requires loose, deep, well-draining soil for straight roots.",
+      "harvest_indicators": "Root shoulder is 0.5–1 inch diameter; tops are bright green; gentle tug releases root",
+      "source": "seed",
+      "growth_stages": [
+        { "stage_name": "germination", "stage_order": 1, "height_cm_min": 0, "height_cm_max": 1, "description": "Slow germination; keep soil moist", "duration_days": 14 },
+        { "stage_name": "seedling", "stage_order": 2, "height_cm_min": 1, "height_cm_max": 8, "description": "Thin to 3-inch spacing once 2 inches tall", "duration_days": 21 },
+        { "stage_name": "vegetative", "stage_order": 3, "height_cm_min": 8, "height_cm_max": 30, "description": "Feathery tops grow; root is swelling underground", "duration_days": 40 },
+        { "stage_name": "harvest", "stage_order": 4, "height_cm_min": 20, "height_cm_max": 35, "description": "Roots reach full size and sweetness", "duration_days": 14 }
+      ],
+      "companions": [
+        { "companion_id": "tomato", "relationship": "beneficial", "notes": "Carrots aerate soil near tomato roots" },
+        { "companion_id": "lettuce", "relationship": "beneficial", "notes": "Good spacing companions; lettuce shades carrot seedlings" },
+        { "companion_id": "dill", "relationship": "antagonistic", "notes": "Dill cross-pollinates and can reduce carrot quality" }
+      ],
+      "planting_window": {
+        "can_direct_sow": true,
+        "can_transplant": false,
+        "direct_sow_weeks_from_last_frost": -4,
+        "transplant_weeks_from_last_frost": null,
+        "direct_sow_weeks_from_first_frost": null,
+        "transplant_weeks_from_first_frost": null,
+        "min_soil_temp_f": 45,
+        "weeks_before_first_frost_to_harvest": null
+      }
+    },
+    {
+      "id": "lettuce",
+      "common_name": "Lettuce",
+      "botanical_name": "Lactuca sativa",
+      "category": "vegetable",
+      "days_to_germination_min": 7,
+      "days_to_germination_max": 14,
+      "days_to_maturity_min": 45,
+      "days_to_maturity_max": 60,
+      "spacing_in_row_inches": 8,
+      "spacing_between_rows_inches": 12,
+      "water_needs": "medium",
+      "water_needs_detail": "Keep soil consistently moist; drought causes bitterness and early bolting",
+      "sun_requirements": "partial",
+      "frost_tolerant": true,
+      "frost_tolerance_detail": "Hardy to light frost; bolts in heat",
+      "description": "Cool-season leafy green. Harvest outer leaves continuously or cut-and-come-again.",
+      "harvest_indicators": "Outer leaves are full-sized; harvest before plant bolts (sends up flower stalk)",
+      "source": "seed",
+      "growth_stages": [
+        { "stage_name": "germination", "stage_order": 1, "height_cm_min": 0, "height_cm_max": 1, "description": "Needs light to germinate; do not bury seed", "duration_days": 10 },
+        { "stage_name": "seedling", "stage_order": 2, "height_cm_min": 1, "height_cm_max": 5, "description": "Thin or transplant when 2–3 leaves appear", "duration_days": 14 },
+        { "stage_name": "vegetative", "stage_order": 3, "height_cm_min": 5, "height_cm_max": 25, "description": "Rosette expands; outer leaves harvestable", "duration_days": 35 },
+        { "stage_name": "harvest", "stage_order": 4, "height_cm_min": 15, "height_cm_max": 30, "description": "Full head or continuous leaf harvest", "duration_days": 21 }
+      ],
+      "companions": [
+        { "companion_id": "carrot", "relationship": "beneficial", "notes": "Good spacing; lettuce provides ground cover" },
+        { "companion_id": "radish", "relationship": "beneficial", "notes": "Radishes repel leaf miners" }
+      ],
+      "planting_window": {
+        "can_direct_sow": true,
+        "can_transplant": true,
+        "direct_sow_weeks_from_last_frost": -4,
+        "transplant_weeks_from_last_frost": -4,
+        "direct_sow_weeks_from_first_frost": null,
+        "transplant_weeks_from_first_frost": null,
+        "min_soil_temp_f": 35,
+        "weeks_before_first_frost_to_harvest": null
+      }
+    },
+    {
+      "id": "cucumber",
+      "common_name": "Cucumber",
+      "botanical_name": "Cucumis sativus",
+      "category": "vegetable",
+      "days_to_germination_min": 7,
+      "days_to_germination_max": 10,
+      "days_to_maturity_min": 50,
+      "days_to_maturity_max": 70,
+      "spacing_in_row_inches": 12,
+      "spacing_between_rows_inches": 48,
+      "water_needs": "high",
+      "water_needs_detail": "1–2 inches per week; consistent moisture prevents bitter fruit; drip irrigation preferred",
+      "sun_requirements": "full-sun",
+      "frost_tolerant": false,
+      "frost_tolerance_detail": "Killed by frost; wait until soil is warm",
+      "description": "Warm-season vine vegetable. Trellising saves space and improves air circulation.",
+      "harvest_indicators": "Firm, dark green, 6–8 inches long; pick before yellowing begins",
+      "source": "seed",
+      "growth_stages": [
+        { "stage_name": "germination", "stage_order": 1, "height_cm_min": 0, "height_cm_max": 3, "description": "Fast germination in warm soil", "duration_days": 8 },
+        { "stage_name": "seedling", "stage_order": 2, "height_cm_min": 3, "height_cm_max": 15, "description": "Cotyledons then first true leaves", "duration_days": 14 },
+        { "stage_name": "vegetative", "stage_order": 3, "height_cm_min": 15, "height_cm_max": 60, "description": "Rapid vine growth; train to trellis", "duration_days": 20 },
+        { "stage_name": "flowering", "stage_order": 4, "height_cm_min": 30, "height_cm_max": 150, "description": "Male flowers appear first; female flowers follow", "duration_days": 14 },
+        { "stage_name": "fruiting", "stage_order": 5, "height_cm_min": 30, "height_cm_max": 180, "description": "Fruits develop rapidly; harvest frequently to encourage production", "duration_days": 30 }
+      ],
+      "companions": [
+        { "companion_id": "dill", "relationship": "beneficial", "notes": "Attracts predatory insects; do not plant near mature dill" },
+        { "companion_id": "basil", "relationship": "beneficial", "notes": "Repels aphids and beetles" }
+      ],
+      "planting_window": {
+        "can_direct_sow": true,
+        "can_transplant": true,
+        "direct_sow_weeks_from_last_frost": 2,
+        "transplant_weeks_from_last_frost": 1,
+        "direct_sow_weeks_from_first_frost": null,
+        "transplant_weeks_from_first_frost": null,
+        "min_soil_temp_f": 60,
+        "weeks_before_first_frost_to_harvest": 10
+      }
+    },
+    {
+      "id": "pepper",
+      "common_name": "Pepper",
+      "botanical_name": "Capsicum annuum",
+      "category": "vegetable",
+      "days_to_germination_min": 10,
+      "days_to_germination_max": 21,
+      "days_to_maturity_min": 70,
+      "days_to_maturity_max": 90,
+      "spacing_in_row_inches": 18,
+      "spacing_between_rows_inches": 24,
+      "water_needs": "medium",
+      "water_needs_detail": "1–2 inches per week; avoid overwatering which causes root rot; consistent moisture prevents blossom drop",
+      "sun_requirements": "full-sun",
+      "frost_tolerant": false,
+      "frost_tolerance_detail": "Very frost sensitive; plant after all danger of frost has passed",
+      "description": "Warm-season annual. Includes sweet bell peppers and hot varieties. Requires long warm season.",
+      "harvest_indicators": "Green peppers: firm and full-sized. Coloured peppers: fully changed to red/yellow/orange",
+      "source": "seed",
+      "growth_stages": [
+        { "stage_name": "germination", "stage_order": 1, "height_cm_min": 0, "height_cm_max": 2, "description": "Needs 80°F+ soil temperature for good germination", "duration_days": 14 },
+        { "stage_name": "seedling", "stage_order": 2, "height_cm_min": 2, "height_cm_max": 15, "description": "Start indoors 8–10 weeks before last frost", "duration_days": 56 },
+        { "stage_name": "vegetative", "stage_order": 3, "height_cm_min": 15, "height_cm_max": 60, "description": "Bushy growth; pinch first flowers for stronger plant", "duration_days": 28 },
+        { "stage_name": "flowering", "stage_order": 4, "height_cm_min": 40, "height_cm_max": 80, "description": "White flowers; self-pollinating", "duration_days": 14 },
+        { "stage_name": "fruiting", "stage_order": 5, "height_cm_min": 40, "height_cm_max": 80, "description": "Fruits develop; colour change takes additional 2–4 weeks", "duration_days": 60 }
+      ],
+      "companions": [
+        { "companion_id": "basil", "relationship": "beneficial", "notes": "Repels aphids and spider mites" },
+        { "companion_id": "tomato", "relationship": "beneficial", "notes": "Similar growing conditions; good neighbours" },
+        { "companion_id": "fennel", "relationship": "antagonistic", "notes": "Fennel inhibits pepper growth" }
+      ],
+      "planting_window": {
+        "can_direct_sow": false,
+        "can_transplant": true,
+        "direct_sow_weeks_from_last_frost": null,
+        "transplant_weeks_from_last_frost": 2,
+        "direct_sow_weeks_from_first_frost": null,
+        "transplant_weeks_from_first_frost": null,
+        "min_soil_temp_f": 65,
+        "weeks_before_first_frost_to_harvest": 13
+      }
+    },
+    {
+      "id": "zucchini",
+      "common_name": "Zucchini",
+      "botanical_name": "Cucurbita pepo",
+      "category": "vegetable",
+      "days_to_germination_min": 7,
+      "days_to_germination_max": 14,
+      "days_to_maturity_min": 50,
+      "days_to_maturity_max": 65,
+      "spacing_in_row_inches": 24,
+      "spacing_between_rows_inches": 48,
+      "water_needs": "high",
+      "water_needs_detail": "1–2 inches per week; water at base to prevent powdery mildew; needs consistent moisture during fruiting",
+      "sun_requirements": "full-sun",
+      "frost_tolerant": false,
+      "frost_tolerance_detail": "Killed by frost; plant after last frost",
+      "description": "Prolific warm-season summer squash. Harvest frequently — fruits become too large very quickly.",
+      "harvest_indicators": "6–8 inches long; skin is tender and can be pierced with fingernail",
+      "source": "seed",
+      "growth_stages": [
+        { "stage_name": "germination", "stage_order": 1, "height_cm_min": 0, "height_cm_max": 4, "description": "Fast germination in warm soil", "duration_days": 7 },
+        { "stage_name": "seedling", "stage_order": 2, "height_cm_min": 4, "height_cm_max": 20, "description": "Large cotyledons; true leaves emerge quickly", "duration_days": 14 },
+        { "stage_name": "vegetative", "stage_order": 3, "height_cm_min": 20, "height_cm_max": 60, "description": "Large leaves; plant spreads rapidly", "duration_days": 21 },
+        { "stage_name": "flowering", "stage_order": 4, "height_cm_min": 40, "height_cm_max": 80, "description": "Large yellow flowers; male then female; hand-pollinate if needed", "duration_days": 14 },
+        { "stage_name": "fruiting", "stage_order": 5, "height_cm_min": 40, "height_cm_max": 80, "description": "Fruits grow rapidly; harvest every 2–3 days", "duration_days": 45 }
+      ],
+      "companions": [
+        { "companion_id": "nasturtium", "relationship": "beneficial", "notes": "Repels squash bugs and aphids" },
+        { "companion_id": "basil", "relationship": "beneficial", "notes": "Repels insects" }
+      ],
+      "planting_window": {
+        "can_direct_sow": true,
+        "can_transplant": true,
+        "direct_sow_weeks_from_last_frost": 2,
+        "transplant_weeks_from_last_frost": 1,
+        "direct_sow_weeks_from_first_frost": null,
+        "transplant_weeks_from_first_frost": null,
+        "min_soil_temp_f": 60,
+        "weeks_before_first_frost_to_harvest": 10
+      }
+    },
+    {
+      "id": "green-bean",
+      "common_name": "Green Bean",
+      "botanical_name": "Phaseolus vulgaris",
+      "category": "vegetable",
+      "days_to_germination_min": 8,
+      "days_to_germination_max": 14,
+      "days_to_maturity_min": 50,
+      "days_to_maturity_max": 60,
+      "spacing_in_row_inches": 6,
+      "spacing_between_rows_inches": 18,
+      "water_needs": "medium",
+      "water_needs_detail": "1 inch per week; avoid wetting foliage to prevent fungal disease; reduce once pods set",
+      "sun_requirements": "full-sun",
+      "frost_tolerant": false,
+      "frost_tolerance_detail": "Frost kills seedlings and damages pods",
+      "description": "Bush or pole bean; warm-season annual. Fixes nitrogen in soil. Direct sow only.",
+      "harvest_indicators": "Pods are firm, snap cleanly, seeds not yet visible through pod wall",
+      "source": "seed",
+      "growth_stages": [
+        { "stage_name": "germination", "stage_order": 1, "height_cm_min": 0, "height_cm_max": 5, "description": "Seed pushes up quickly in warm soil", "duration_days": 10 },
+        { "stage_name": "seedling", "stage_order": 2, "height_cm_min": 5, "height_cm_max": 20, "description": "Primary leaves unfold", "duration_days": 14 },
+        { "stage_name": "vegetative", "stage_order": 3, "height_cm_min": 20, "height_cm_max": 50, "description": "Bush type fills out; do not cultivate — shallow roots", "duration_days": 21 },
+        { "stage_name": "flowering", "stage_order": 4, "height_cm_min": 30, "height_cm_max": 60, "description": "Small white/pink flowers appear", "duration_days": 10 },
+        { "stage_name": "fruiting", "stage_order": 5, "height_cm_min": 30, "height_cm_max": 60, "description": "Pods fill quickly; harvest before seeds bulge", "duration_days": 14 }
+      ],
+      "companions": [
+        { "companion_id": "carrot", "relationship": "beneficial", "notes": "Beans fix nitrogen that benefits carrots" },
+        { "companion_id": "cucumber", "relationship": "beneficial", "notes": "Mutually beneficial; beans fix nitrogen" }
+      ],
+      "planting_window": {
+        "can_direct_sow": true,
+        "can_transplant": false,
+        "direct_sow_weeks_from_last_frost": 2,
+        "transplant_weeks_from_last_frost": null,
+        "direct_sow_weeks_from_first_frost": null,
+        "transplant_weeks_from_first_frost": null,
+        "min_soil_temp_f": 60,
+        "weeks_before_first_frost_to_harvest": 10
+      }
+    },
+    {
+      "id": "spinach",
+      "common_name": "Spinach",
+      "botanical_name": "Spinacia oleracea",
+      "category": "vegetable",
+      "days_to_germination_min": 7,
+      "days_to_germination_max": 14,
+      "days_to_maturity_min": 37,
+      "days_to_maturity_max": 45,
+      "spacing_in_row_inches": 6,
+      "spacing_between_rows_inches": 12,
+      "water_needs": "medium",
+      "water_needs_detail": "Keep soil evenly moist; heat and drought triggers bolting",
+      "sun_requirements": "partial",
+      "frost_tolerant": true,
+      "frost_tolerance_detail": "Hardy to 20°F; flavour improves with light frost",
+      "description": "Fast-growing cool-season green. Bolts quickly in heat; best in spring and fall.",
+      "harvest_indicators": "Leaves are 3–4 inches; harvest outer leaves; entire plant when centre starts to elongate",
+      "source": "seed",
+      "growth_stages": [
+        { "stage_name": "germination", "stage_order": 1, "height_cm_min": 0, "height_cm_max": 2, "description": "Germinates well in cool soil", "duration_days": 10 },
+        { "stage_name": "seedling", "stage_order": 2, "height_cm_min": 2, "height_cm_max": 8, "description": "Thin to 6-inch spacing", "duration_days": 14 },
+        { "stage_name": "vegetative", "stage_order": 3, "height_cm_min": 8, "height_cm_max": 25, "description": "Rosette of dark leaves; harvest outer leaves regularly", "duration_days": 21 },
+        { "stage_name": "harvest", "stage_order": 4, "height_cm_min": 15, "height_cm_max": 30, "description": "Full harvest before bolting", "duration_days": 14 }
+      ],
+      "companions": [
+        { "companion_id": "strawberry", "relationship": "beneficial", "notes": "Good ground cover under strawberries" },
+        { "companion_id": "radish", "relationship": "beneficial", "notes": "Radishes repel leaf miners" }
+      ],
+      "planting_window": {
+        "can_direct_sow": true,
+        "can_transplant": true,
+        "direct_sow_weeks_from_last_frost": -6,
+        "transplant_weeks_from_last_frost": -6,
+        "direct_sow_weeks_from_first_frost": null,
+        "transplant_weeks_from_first_frost": null,
+        "min_soil_temp_f": 35,
+        "weeks_before_first_frost_to_harvest": null
+      }
+    },
+    {
+      "id": "radish",
+      "common_name": "Radish",
+      "botanical_name": "Raphanus sativus",
+      "category": "vegetable",
+      "days_to_germination_min": 3,
+      "days_to_germination_max": 7,
+      "days_to_maturity_min": 22,
+      "days_to_maturity_max": 30,
+      "spacing_in_row_inches": 2,
+      "spacing_between_rows_inches": 6,
+      "water_needs": "medium",
+      "water_needs_detail": "Consistent moisture prevents pithiness and cracking; roughly 1 inch per week",
+      "sun_requirements": "full-sun",
+      "frost_tolerant": true,
+      "frost_tolerance_detail": "Tolerates light frost; best in cool weather",
+      "description": "Fastest maturing vegetable in the garden. Excellent for marking slow-germinating rows.",
+      "harvest_indicators": "Shoulder is 1 inch diameter; harvest before pithy or cracked",
+      "source": "seed",
+      "growth_stages": [
+        { "stage_name": "germination", "stage_order": 1, "height_cm_min": 0, "height_cm_max": 2, "description": "Very fast germination", "duration_days": 5 },
+        { "stage_name": "seedling", "stage_order": 2, "height_cm_min": 2, "height_cm_max": 8, "description": "Thin to 2-inch spacing", "duration_days": 7 },
+        { "stage_name": "vegetative", "stage_order": 3, "height_cm_min": 8, "height_cm_max": 20, "description": "Root swells rapidly", "duration_days": 14 },
+        { "stage_name": "harvest", "stage_order": 4, "height_cm_min": 15, "height_cm_max": 25, "description": "Harvest promptly; roots become pithy if left too long", "duration_days": 7 }
+      ],
+      "companions": [
+        { "companion_id": "lettuce", "relationship": "beneficial", "notes": "Repels leaf miners from lettuce" },
+        { "companion_id": "spinach", "relationship": "beneficial", "notes": "Good space filler between slower crops" }
+      ],
+      "planting_window": {
+        "can_direct_sow": true,
+        "can_transplant": false,
+        "direct_sow_weeks_from_last_frost": -6,
+        "transplant_weeks_from_last_frost": null,
+        "direct_sow_weeks_from_first_frost": null,
+        "transplant_weeks_from_first_frost": null,
+        "min_soil_temp_f": 40,
+        "weeks_before_first_frost_to_harvest": null
+      }
+    },
+    {
+      "id": "kale",
+      "common_name": "Kale",
+      "botanical_name": "Brassica oleracea var. acephala",
+      "category": "vegetable",
+      "days_to_germination_min": 5,
+      "days_to_germination_max": 10,
+      "days_to_maturity_min": 55,
+      "days_to_maturity_max": 75,
+      "spacing_in_row_inches": 18,
+      "spacing_between_rows_inches": 24,
+      "water_needs": "medium",
+      "water_needs_detail": "1–1.5 inches per week; drought-stressed kale becomes tough and bitter",
+      "sun_requirements": "full-sun",
+      "frost_tolerant": true,
+      "frost_tolerance_detail": "Very frost hardy; flavour sweetens after frost; survives to 10°F",
+      "description": "Hardy cool-season green. One of the most nutritious vegetables; harvest over multiple months.",
+      "harvest_indicators": "Outer leaves are dark green and 8–10 inches; harvest from bottom up",
+      "source": "seed",
+      "growth_stages": [
+        { "stage_name": "germination", "stage_order": 1, "height_cm_min": 0, "height_cm_max": 2, "description": "Quick germination in cool soil", "duration_days": 7 },
+        { "stage_name": "seedling", "stage_order": 2, "height_cm_min": 2, "height_cm_max": 10, "description": "Thin or transplant at 4 inches", "duration_days": 21 },
+        { "stage_name": "vegetative", "stage_order": 3, "height_cm_min": 10, "height_cm_max": 60, "description": "Large leaves develop; harvest outer leaves continuously", "duration_days": 45 },
+        { "stage_name": "harvest", "stage_order": 4, "height_cm_min": 40, "height_cm_max": 90, "description": "Extended harvest through fall and winter in mild climates", "duration_days": 90 }
+      ],
+      "companions": [
+        { "companion_id": "basil", "relationship": "beneficial", "notes": "Repels aphids and whitefly" }
+      ],
+      "planting_window": {
+        "can_direct_sow": true,
+        "can_transplant": true,
+        "direct_sow_weeks_from_last_frost": -4,
+        "transplant_weeks_from_last_frost": -4,
+        "direct_sow_weeks_from_first_frost": null,
+        "transplant_weeks_from_first_frost": null,
+        "min_soil_temp_f": 40,
+        "weeks_before_first_frost_to_harvest": null
+      }
+    },
+    {
+      "id": "broccoli",
+      "common_name": "Broccoli",
+      "botanical_name": "Brassica oleracea var. italica",
+      "category": "vegetable",
+      "days_to_germination_min": 5,
+      "days_to_germination_max": 10,
+      "days_to_maturity_min": 60,
+      "days_to_maturity_max": 80,
+      "spacing_in_row_inches": 18,
+      "spacing_between_rows_inches": 24,
+      "water_needs": "medium",
+      "water_needs_detail": "1–1.5 inches per week; consistent moisture prevents premature heading",
+      "sun_requirements": "full-sun",
+      "frost_tolerant": true,
+      "frost_tolerance_detail": "Tolerates frost; flavour improves with cool temperatures",
+      "description": "Cool-season brassica. Harvest central head before flowers open; side shoots follow.",
+      "harvest_indicators": "Central head is dark green and tight; buds have not begun to yellow or separate",
+      "source": "seed",
+      "growth_stages": [
+        { "stage_name": "germination", "stage_order": 1, "height_cm_min": 0, "height_cm_max": 2, "description": "Quick germination", "duration_days": 7 },
+        { "stage_name": "seedling", "stage_order": 2, "height_cm_min": 2, "height_cm_max": 12, "description": "Start indoors 6–8 weeks before transplant", "duration_days": 42 },
+        { "stage_name": "vegetative", "stage_order": 3, "height_cm_min": 12, "height_cm_max": 60, "description": "Large blue-green leaves develop", "duration_days": 35 },
+        { "stage_name": "harvest", "stage_order": 4, "height_cm_min": 40, "height_cm_max": 70, "description": "Central head then side shoots over several weeks", "duration_days": 28 }
+      ],
+      "companions": [
+        { "companion_id": "basil", "relationship": "beneficial", "notes": "Repels aphids and cabbage moths" }
+      ],
+      "planting_window": {
+        "can_direct_sow": false,
+        "can_transplant": true,
+        "direct_sow_weeks_from_last_frost": null,
+        "transplant_weeks_from_last_frost": -4,
+        "direct_sow_weeks_from_first_frost": null,
+        "transplant_weeks_from_first_frost": null,
+        "min_soil_temp_f": 45,
+        "weeks_before_first_frost_to_harvest": null
+      }
+    },
+    {
+      "id": "garlic",
+      "common_name": "Garlic",
+      "botanical_name": "Allium sativum",
+      "category": "vegetable",
+      "days_to_germination_min": 14,
+      "days_to_germination_max": 21,
+      "days_to_maturity_min": 240,
+      "days_to_maturity_max": 270,
+      "spacing_in_row_inches": 6,
+      "spacing_between_rows_inches": 12,
+      "water_needs": "low",
+      "water_needs_detail": "Water sparingly in fall; reduce in spring as foliage yellows; stop 2 weeks before harvest",
+      "sun_requirements": "full-sun",
+      "frost_tolerant": true,
+      "frost_tolerance_detail": "Very frost hardy; planted in fall and overwinters in ground",
+      "description": "Planted in fall, harvested the following summer. One of the easiest crops to grow.",
+      "harvest_indicators": "Lower half of leaves have turned brown/yellow; dig when 5–6 green leaves remain",
+      "source": "seed",
+      "growth_stages": [
+        { "stage_name": "germination", "stage_order": 1, "height_cm_min": 0, "height_cm_max": 5, "description": "Green shoots emerge from planted cloves", "duration_days": 21 },
+        { "stage_name": "vegetative", "stage_order": 2, "height_cm_min": 5, "height_cm_max": 30, "description": "Slow winter growth; rapid spring growth", "duration_days": 180 },
+        { "stage_name": "flowering", "stage_order": 3, "height_cm_min": 30, "height_cm_max": 60, "description": "Scape (flower stalk) forms; remove it to direct energy to bulb", "duration_days": 30 },
+        { "stage_name": "harvest", "stage_order": 4, "height_cm_min": 30, "height_cm_max": 60, "description": "Bulbs are fully formed; cure for 3–4 weeks after harvest", "duration_days": 14 }
+      ],
+      "companions": [
+        { "companion_id": "tomato", "relationship": "beneficial", "notes": "Repels aphids, spider mites, and other pests" },
+        { "companion_id": "pepper", "relationship": "beneficial", "notes": "Natural pest repellent" }
+      ],
+      "planting_window": {
+        "can_direct_sow": true,
+        "can_transplant": false,
+        "direct_sow_weeks_from_last_frost": null,
+        "transplant_weeks_from_last_frost": null,
+        "direct_sow_weeks_from_first_frost": -6,
+        "transplant_weeks_from_first_frost": null,
+        "min_soil_temp_f": 50,
+        "weeks_before_first_frost_to_harvest": null
+      }
+    },
+    {
+      "id": "pea",
+      "common_name": "Pea",
+      "botanical_name": "Pisum sativum",
+      "category": "vegetable",
+      "days_to_germination_min": 7,
+      "days_to_germination_max": 14,
+      "days_to_maturity_min": 60,
+      "days_to_maturity_max": 70,
+      "spacing_in_row_inches": 2,
+      "spacing_between_rows_inches": 18,
+      "water_needs": "medium",
+      "water_needs_detail": "1 inch per week; extra water during flowering and pod fill; avoid overhead watering",
+      "sun_requirements": "full-sun",
+      "frost_tolerant": true,
+      "frost_tolerance_detail": "Hardy to 28°F; one of the first crops planted in spring",
+      "description": "Cool-season vining annual. Fix nitrogen. Provide trellis for climbing types.",
+      "harvest_indicators": "Pods are plump and bright green; snap peas: full and crisp; shelling peas: round seeds visible through pod",
+      "source": "seed",
+      "growth_stages": [
+        { "stage_name": "germination", "stage_order": 1, "height_cm_min": 0, "height_cm_max": 5, "description": "Germinates in cool soil; do not overwater", "duration_days": 10 },
+        { "stage_name": "seedling", "stage_order": 2, "height_cm_min": 5, "height_cm_max": 20, "description": "Tendrils begin to form", "duration_days": 14 },
+        { "stage_name": "vegetative", "stage_order": 3, "height_cm_min": 20, "height_cm_max": 120, "description": "Climbing growth; support with trellis or netting", "duration_days": 30 },
+        { "stage_name": "flowering", "stage_order": 4, "height_cm_min": 60, "height_cm_max": 150, "description": "White or purple flowers; self-pollinating", "duration_days": 14 },
+        { "stage_name": "fruiting", "stage_order": 5, "height_cm_min": 60, "height_cm_max": 150, "description": "Pods fill quickly; harvest before pods turn yellow", "duration_days": 21 }
+      ],
+      "companions": [
+        { "companion_id": "carrot", "relationship": "beneficial", "notes": "Peas fix nitrogen; good with root vegetables" },
+        { "companion_id": "lettuce", "relationship": "beneficial", "notes": "Peas provide shade for lettuce in warm weather" }
+      ],
+      "planting_window": {
+        "can_direct_sow": true,
+        "can_transplant": false,
+        "direct_sow_weeks_from_last_frost": -6,
+        "transplant_weeks_from_last_frost": null,
+        "direct_sow_weeks_from_first_frost": null,
+        "transplant_weeks_from_first_frost": null,
+        "min_soil_temp_f": 40,
+        "weeks_before_first_frost_to_harvest": null
+      }
+    },
+    {
+      "id": "dill",
+      "common_name": "Dill",
+      "botanical_name": "Anethum graveolens",
+      "category": "herb",
+      "days_to_germination_min": 7,
+      "days_to_germination_max": 14,
+      "days_to_maturity_min": 40,
+      "days_to_maturity_max": 60,
+      "spacing_in_row_inches": 12,
+      "spacing_between_rows_inches": 12,
+      "water_needs": "low",
+      "water_needs_detail": "Drought tolerant once established; overwatering causes root rot",
+      "sun_requirements": "full-sun",
+      "frost_tolerant": false,
+      "frost_tolerance_detail": "Frost sensitive once established; self-seeds prolifically",
+      "description": "Tall annual herb. Attracts beneficial insects. Used for pickling and cooking. Self-seeds freely.",
+      "harvest_indicators": "Harvest leaves before flowers open; harvest seeds when flower heads turn brown",
+      "source": "seed",
+      "growth_stages": [
+        { "stage_name": "germination", "stage_order": 1, "height_cm_min": 0, "height_cm_max": 3, "description": "Direct sow only; does not transplant well", "duration_days": 10 },
+        { "stage_name": "seedling", "stage_order": 2, "height_cm_min": 3, "height_cm_max": 15, "description": "Feathery foliage develops", "duration_days": 14 },
+        { "stage_name": "vegetative", "stage_order": 3, "height_cm_min": 15, "height_cm_max": 90, "description": "Rapid upright growth; harvest leaves regularly", "duration_days": 30 },
+        { "stage_name": "flowering", "stage_order": 4, "height_cm_min": 60, "height_cm_max": 150, "description": "Flat yellow flower heads (umbels) attract beneficial insects", "duration_days": 21 }
+      ],
+      "companions": [
+        { "companion_id": "cucumber", "relationship": "beneficial", "notes": "Attracts beneficial insects; keep away from mature dill which can inhibit cucumbers" }
+      ],
+      "planting_window": {
+        "can_direct_sow": true,
+        "can_transplant": false,
+        "direct_sow_weeks_from_last_frost": 0,
+        "transplant_weeks_from_last_frost": null,
+        "direct_sow_weeks_from_first_frost": null,
+        "transplant_weeks_from_first_frost": null,
+        "min_soil_temp_f": 50,
+        "weeks_before_first_frost_to_harvest": 8
+      }
+    },
+    {
+      "id": "rosemary",
+      "common_name": "Rosemary",
+      "botanical_name": "Salvia rosmarinus",
+      "category": "herb",
+      "days_to_germination_min": 14,
+      "days_to_germination_max": 28,
+      "days_to_maturity_min": 90,
+      "days_to_maturity_max": 180,
+      "spacing_in_row_inches": 24,
+      "spacing_between_rows_inches": 36,
+      "water_needs": "low",
+      "water_needs_detail": "Drought tolerant; allow soil to dry between waterings; overwatering is the most common cause of death",
+      "sun_requirements": "full-sun",
+      "frost_tolerant": true,
+      "frost_tolerance_detail": "Hardy to zone 6; mulch heavily in colder zones",
+      "description": "Perennial woody herb in zones 6+; grown as annual in colder zones. Drought-tolerant once established.",
+      "harvest_indicators": "Harvest stem tips anytime; never remove more than 1/3 of plant at once",
+      "source": "seed",
+      "growth_stages": [
+        { "stage_name": "germination", "stage_order": 1, "height_cm_min": 0, "height_cm_max": 2, "description": "Slow germination; easier to propagate from cuttings", "duration_days": 21 },
+        { "stage_name": "seedling", "stage_order": 2, "height_cm_min": 2, "height_cm_max": 10, "description": "Slow initial growth", "duration_days": 60 },
+        { "stage_name": "vegetative", "stage_order": 3, "height_cm_min": 10, "height_cm_max": 60, "description": "Woody shrubby growth; harvest stem tips", "duration_days": 120 },
+        { "stage_name": "flowering", "stage_order": 4, "height_cm_min": 30, "height_cm_max": 120, "description": "Small blue/white flowers; attracts pollinators", "duration_days": 30 }
+      ],
+      "companions": [
+        { "companion_id": "pepper", "relationship": "beneficial", "notes": "Repels bean beetles and cabbage moths" }
+      ],
+      "planting_window": {
+        "can_direct_sow": false,
+        "can_transplant": true,
+        "direct_sow_weeks_from_last_frost": null,
+        "transplant_weeks_from_last_frost": 2,
+        "direct_sow_weeks_from_first_frost": null,
+        "transplant_weeks_from_first_frost": null,
+        "min_soil_temp_f": 50,
+        "weeks_before_first_frost_to_harvest": null
+      }
+    },
+    {
+      "id": "thyme",
+      "common_name": "Thyme",
+      "botanical_name": "Thymus vulgaris",
+      "category": "herb",
+      "days_to_germination_min": 14,
+      "days_to_germination_max": 28,
+      "days_to_maturity_min": 90,
+      "days_to_maturity_max": 180,
+      "spacing_in_row_inches": 12,
+      "spacing_between_rows_inches": 18,
+      "water_needs": "low",
+      "water_needs_detail": "Drought tolerant; water only when top inch of soil is dry; excellent drainage essential",
+      "sun_requirements": "full-sun",
+      "frost_tolerant": true,
+      "frost_tolerance_detail": "Hardy to zone 4; semi-evergreen in mild winters",
+      "description": "Perennial low-growing woody herb. Drought-tolerant. Harvest throughout the growing season.",
+      "harvest_indicators": "Harvest stem tips before flowers fully open; cut back by 1/3 to encourage new growth",
+      "source": "seed",
+      "growth_stages": [
+        { "stage_name": "germination", "stage_order": 1, "height_cm_min": 0, "height_cm_max": 2, "description": "Slow and erratic germination", "duration_days": 21 },
+        { "stage_name": "seedling", "stage_order": 2, "height_cm_min": 2, "height_cm_max": 8, "description": "Slow initial growth; water carefully", "duration_days": 42 },
+        { "stage_name": "vegetative", "stage_order": 3, "height_cm_min": 8, "height_cm_max": 30, "description": "Spreading low mound; harvest tips regularly", "duration_days": 90 },
+        { "stage_name": "flowering", "stage_order": 4, "height_cm_min": 15, "height_cm_max": 35, "description": "Small pink/purple flowers; attracts pollinators", "duration_days": 30 }
+      ],
+      "companions": [
+        { "companion_id": "tomato", "relationship": "beneficial", "notes": "Repels cabbage worms and whiteflies" }
+      ],
+      "planting_window": {
+        "can_direct_sow": true,
+        "can_transplant": true,
+        "direct_sow_weeks_from_last_frost": -4,
+        "transplant_weeks_from_last_frost": 0,
+        "direct_sow_weeks_from_first_frost": null,
+        "transplant_weeks_from_first_frost": null,
+        "min_soil_temp_f": 50,
+        "weeks_before_first_frost_to_harvest": null
+      }
+    },
+    {
+      "id": "parsley",
+      "common_name": "Parsley",
+      "botanical_name": "Petroselinum crispum",
+      "category": "herb",
+      "days_to_germination_min": 21,
+      "days_to_germination_max": 28,
+      "days_to_maturity_min": 70,
+      "days_to_maturity_max": 90,
+      "spacing_in_row_inches": 8,
+      "spacing_between_rows_inches": 12,
+      "water_needs": "medium",
+      "water_needs_detail": "Keep soil consistently moist; mulch to retain moisture; drought causes yellowing",
+      "sun_requirements": "partial",
+      "frost_tolerant": true,
+      "frost_tolerance_detail": "Hardy biennial; survives frost and overwinters in zones 5+",
+      "description": "Slow-germinating biennial grown as an annual. Soak seeds 24 hours before planting to speed germination.",
+      "harvest_indicators": "Harvest outer stems at base; leave centre stems to continue growing",
+      "source": "seed",
+      "growth_stages": [
+        { "stage_name": "germination", "stage_order": 1, "height_cm_min": 0, "height_cm_max": 1, "description": "Very slow germination; pre-soak seeds", "duration_days": 25 },
+        { "stage_name": "seedling", "stage_order": 2, "height_cm_min": 1, "height_cm_max": 8, "description": "Slow early growth", "duration_days": 28 },
+        { "stage_name": "vegetative", "stage_order": 3, "height_cm_min": 8, "height_cm_max": 40, "description": "Dense rosette of curly or flat leaves; harvest outer stems", "duration_days": 60 }
+      ],
+      "companions": [
+        { "companion_id": "tomato", "relationship": "beneficial", "notes": "Attracts predatory insects and may repel some pests" }
+      ],
+      "planting_window": {
+        "can_direct_sow": true,
+        "can_transplant": true,
+        "direct_sow_weeks_from_last_frost": -4,
+        "transplant_weeks_from_last_frost": -4,
+        "direct_sow_weeks_from_first_frost": null,
+        "transplant_weeks_from_first_frost": null,
+        "min_soil_temp_f": 40,
+        "weeks_before_first_frost_to_harvest": null
+      }
+    },
+    {
+      "id": "chive",
+      "common_name": "Chive",
+      "botanical_name": "Allium schoenoprasum",
+      "category": "herb",
+      "days_to_germination_min": 10,
+      "days_to_germination_max": 14,
+      "days_to_maturity_min": 60,
+      "days_to_maturity_max": 90,
+      "spacing_in_row_inches": 6,
+      "spacing_between_rows_inches": 12,
+      "water_needs": "low",
+      "water_needs_detail": "Water when top inch dries out; tolerates dry spells once established",
+      "sun_requirements": "full-sun",
+      "frost_tolerant": true,
+      "frost_tolerance_detail": "Hardy perennial in zones 3–9; dies back and regrows",
+      "description": "Hardy perennial bulb herb. Edible flowers. Cut back to 2 inches to encourage new growth.",
+      "harvest_indicators": "Cut leaves to 2 inches from base anytime; avoid cutting more than 1/3 at once",
+      "source": "seed",
+      "growth_stages": [
+        { "stage_name": "germination", "stage_order": 1, "height_cm_min": 0, "height_cm_max": 3, "description": "Thin grass-like shoots emerge", "duration_days": 12 },
+        { "stage_name": "seedling", "stage_order": 2, "height_cm_min": 3, "height_cm_max": 15, "description": "Clump begins to form", "duration_days": 30 },
+        { "stage_name": "vegetative", "stage_order": 3, "height_cm_min": 15, "height_cm_max": 40, "description": "Dense clump; harvest regularly", "duration_days": 90 },
+        { "stage_name": "flowering", "stage_order": 4, "height_cm_min": 25, "height_cm_max": 50, "description": "Purple globe flowers; edible", "duration_days": 30 }
+      ],
+      "companions": [
+        { "companion_id": "carrot", "relationship": "beneficial", "notes": "Repels aphids and carrot fly" },
+        { "companion_id": "tomato", "relationship": "beneficial", "notes": "Repels aphids" }
+      ],
+      "planting_window": {
+        "can_direct_sow": true,
+        "can_transplant": true,
+        "direct_sow_weeks_from_last_frost": -6,
+        "transplant_weeks_from_last_frost": -6,
+        "direct_sow_weeks_from_first_frost": null,
+        "transplant_weeks_from_first_frost": null,
+        "min_soil_temp_f": 40,
+        "weeks_before_first_frost_to_harvest": null
+      }
+    },
+    {
+      "id": "mint",
+      "common_name": "Mint",
+      "botanical_name": "Mentha spicata",
+      "category": "herb",
+      "days_to_germination_min": 10,
+      "days_to_germination_max": 16,
+      "days_to_maturity_min": 60,
+      "days_to_maturity_max": 90,
+      "spacing_in_row_inches": 18,
+      "spacing_between_rows_inches": 24,
+      "water_needs": "medium",
+      "water_needs_detail": "Keep soil moist; does not tolerate drought well; plant in containers to control invasive roots",
+      "sun_requirements": "partial",
+      "frost_tolerant": true,
+      "frost_tolerance_detail": "Hardy perennial in zones 3–11; dies back and regrows vigorously",
+      "description": "Vigorous perennial herb. Plant in containers to prevent spreading. Very easy to grow.",
+      "harvest_indicators": "Harvest stems just before flowering; cut back to 2 inches to encourage bushy regrowth",
+      "source": "seed",
+      "growth_stages": [
+        { "stage_name": "germination", "stage_order": 1, "height_cm_min": 0, "height_cm_max": 2, "description": "Sprouts from seed or easier from division/cutting", "duration_days": 13 },
+        { "stage_name": "seedling", "stage_order": 2, "height_cm_min": 2, "height_cm_max": 10, "description": "Characteristic mint scent from first true leaves", "duration_days": 21 },
+        { "stage_name": "vegetative", "stage_order": 3, "height_cm_min": 10, "height_cm_max": 60, "description": "Rapid spreading via runners; harvest frequently", "duration_days": 60 },
+        { "stage_name": "flowering", "stage_order": 4, "height_cm_min": 30, "height_cm_max": 80, "description": "Lavender flower spikes; pinch to extend leaf production", "duration_days": 30 }
+      ],
+      "companions": [
+        { "companion_id": "tomato", "relationship": "beneficial", "notes": "Repels aphids, ants and other pests" }
+      ],
+      "planting_window": {
+        "can_direct_sow": true,
+        "can_transplant": true,
+        "direct_sow_weeks_from_last_frost": -4,
+        "transplant_weeks_from_last_frost": 1,
+        "direct_sow_weeks_from_first_frost": null,
+        "transplant_weeks_from_first_frost": null,
+        "min_soil_temp_f": 50,
+        "weeks_before_first_frost_to_harvest": null
+      }
+    },
+    {
+      "id": "strawberry",
+      "common_name": "Strawberry",
+      "botanical_name": "Fragaria × ananassa",
+      "category": "fruit",
+      "days_to_germination_min": 14,
+      "days_to_germination_max": 28,
+      "days_to_maturity_min": 60,
+      "days_to_maturity_max": 90,
+      "spacing_in_row_inches": 12,
+      "spacing_between_rows_inches": 24,
+      "water_needs": "medium",
+      "water_needs_detail": "1–1.5 inches per week; drip irrigation preferred to keep foliage dry and prevent disease",
+      "sun_requirements": "full-sun",
+      "frost_tolerant": true,
+      "frost_tolerance_detail": "Hardy perennial in zones 3–10; mulch crowns over winter",
+      "description": "Low-growing perennial fruit. June-bearing or everbearing varieties. Propagates via runners.",
+      "harvest_indicators": "Fully red, firm, and fragrant; separates easily from plant; harvest in morning",
+      "source": "seed",
+      "growth_stages": [
+        { "stage_name": "germination", "stage_order": 1, "height_cm_min": 0, "height_cm_max": 2, "description": "Easier to establish from crowns or runners than seed", "duration_days": 21 },
+        { "stage_name": "seedling", "stage_order": 2, "height_cm_min": 2, "height_cm_max": 8, "description": "Young plant establishes roots", "duration_days": 30 },
+        { "stage_name": "vegetative", "stage_order": 3, "height_cm_min": 8, "height_cm_max": 25, "description": "Trifoliate leaves develop; runners form in second year", "duration_days": 60 },
+        { "stage_name": "flowering", "stage_order": 4, "height_cm_min": 15, "height_cm_max": 30, "description": "White 5-petal flowers; remove first-year flowers to strengthen plant", "duration_days": 21 },
+        { "stage_name": "fruiting", "stage_order": 5, "height_cm_min": 15, "height_cm_max": 30, "description": "Green fruits turn white then red over 30 days", "duration_days": 30 }
+      ],
+      "companions": [
+        { "companion_id": "spinach", "relationship": "beneficial", "notes": "Ground cover under strawberries" },
+        { "companion_id": "thyme", "relationship": "beneficial", "notes": "Repels worms and insects" }
+      ],
+      "planting_window": {
+        "can_direct_sow": false,
+        "can_transplant": true,
+        "direct_sow_weeks_from_last_frost": null,
+        "transplant_weeks_from_last_frost": -2,
+        "direct_sow_weeks_from_first_frost": null,
+        "transplant_weeks_from_first_frost": null,
+        "min_soil_temp_f": 45,
+        "weeks_before_first_frost_to_harvest": null
+      }
+    },
+    {
+      "id": "blueberry",
+      "common_name": "Blueberry",
+      "botanical_name": "Vaccinium corymbosum",
+      "category": "fruit",
+      "days_to_germination_min": 30,
+      "days_to_germination_max": 90,
+      "days_to_maturity_min": 1095,
+      "days_to_maturity_max": 1825,
+      "spacing_in_row_inches": 60,
+      "spacing_between_rows_inches": 96,
+      "water_needs": "medium",
+      "water_needs_detail": "1–2 inches per week; shallow roots need consistent moisture; mulch to retain water and maintain soil acidity",
+      "sun_requirements": "full-sun",
+      "frost_tolerant": true,
+      "frost_tolerance_detail": "Hardy to zones 3–7 depending on variety; needs winter chill hours",
+      "description": "Perennial shrub producing fruit for decades. Requires acidic soil (pH 4.5–5.5). Plant 2+ varieties for cross-pollination.",
+      "harvest_indicators": "Fully blue, slightly soft; separates with gentle tug; taste-test for sweetness",
+      "source": "seed",
+      "growth_stages": [
+        { "stage_name": "seedling", "stage_order": 1, "height_cm_min": 5, "height_cm_max": 30, "description": "First 1–2 years establishing root system", "duration_days": 365 },
+        { "stage_name": "vegetative", "stage_order": 2, "height_cm_min": 30, "height_cm_max": 150, "description": "Shrub grows 2–4 feet per year", "duration_days": 730 },
+        { "stage_name": "flowering", "stage_order": 3, "height_cm_min": 60, "height_cm_max": 200, "description": "Bell-shaped white flowers in clusters", "duration_days": 21 },
+        { "stage_name": "fruiting", "stage_order": 4, "height_cm_min": 60, "height_cm_max": 200, "description": "Berries ripen over 2–4 weeks; clusters ripen unevenly", "duration_days": 60 }
+      ],
+      "companions": [
+        { "companion_id": "strawberry", "relationship": "beneficial", "notes": "Both prefer acidic soil; good companions" }
+      ],
+      "planting_window": {
+        "can_direct_sow": false,
+        "can_transplant": true,
+        "direct_sow_weeks_from_last_frost": null,
+        "transplant_weeks_from_last_frost": 0,
+        "direct_sow_weeks_from_first_frost": null,
+        "transplant_weeks_from_first_frost": null,
+        "min_soil_temp_f": 50,
+        "weeks_before_first_frost_to_harvest": null
+      }
+    },
+    {
+      "id": "nasturtium",
+      "common_name": "Nasturtium",
+      "botanical_name": "Tropaeolum majus",
+      "category": "vegetable",
+      "days_to_germination_min": 7,
+      "days_to_germination_max": 14,
+      "days_to_maturity_min": 55,
+      "days_to_maturity_max": 70,
+      "spacing_in_row_inches": 10,
+      "spacing_between_rows_inches": 12,
+      "water_needs": "low",
+      "water_needs_detail": "Thrives in poor, dry soil; overwatering or rich soil produces foliage at expense of flowers",
+      "sun_requirements": "full-sun",
+      "frost_tolerant": false,
+      "frost_tolerance_detail": "Frost sensitive; plant after last frost",
+      "description": "Edible flowers and leaves. Excellent companion plant. Thrives in poor soil. Direct sow only.",
+      "harvest_indicators": "Harvest flowers as they open; harvest young leaves; harvest seeds green for capers",
+      "source": "seed",
+      "growth_stages": [
+        { "stage_name": "germination", "stage_order": 1, "height_cm_min": 0, "height_cm_max": 3, "description": "Fast germination; plant large seeds 1 inch deep", "duration_days": 10 },
+        { "stage_name": "seedling", "stage_order": 2, "height_cm_min": 3, "height_cm_max": 15, "description": "Round lily-pad leaves appear", "duration_days": 14 },
+        { "stage_name": "vegetative", "stage_order": 3, "height_cm_min": 15, "height_cm_max": 40, "description": "Mounding or trailing growth", "duration_days": 30 },
+        { "stage_name": "flowering", "stage_order": 4, "height_cm_min": 20, "height_cm_max": 60, "description": "Continuous bright orange/yellow/red flowers through frost", "duration_days": 90 }
+      ],
+      "companions": [
+        { "companion_id": "zucchini", "relationship": "beneficial", "notes": "Repels squash bugs and aphids" },
+        { "companion_id": "cucumber", "relationship": "beneficial", "notes": "Lures aphids away from cucumbers (trap crop)" }
+      ],
+      "planting_window": {
+        "can_direct_sow": true,
+        "can_transplant": false,
+        "direct_sow_weeks_from_last_frost": 2,
+        "transplant_weeks_from_last_frost": null,
+        "direct_sow_weeks_from_first_frost": null,
+        "transplant_weeks_from_first_frost": null,
+        "min_soil_temp_f": 55,
+        "weeks_before_first_frost_to_harvest": null
+      }
+    },
+    {
+      "id": "fennel",
+      "common_name": "Fennel",
+      "botanical_name": "Foeniculum vulgare",
+      "category": "herb",
+      "days_to_germination_min": 7,
+      "days_to_germination_max": 14,
+      "days_to_maturity_min": 65,
+      "days_to_maturity_max": 90,
+      "spacing_in_row_inches": 12,
+      "spacing_between_rows_inches": 18,
+      "water_needs": "low",
+      "water_needs_detail": "Drought tolerant once established; water regularly until established",
+      "sun_requirements": "full-sun",
+      "frost_tolerant": false,
+      "frost_tolerance_detail": "Treat as annual in zones below 6; perennial in zones 6–10",
+      "description": "Licorice-flavoured herb with edible bulb, stalks, fronds and seeds. Allelopathic — keep away from most vegetables.",
+      "harvest_indicators": "Fronds: harvest anytime. Bulb: harvest when 3–4 inches across. Seeds: harvest when brown",
+      "source": "seed",
+      "growth_stages": [
+        { "stage_name": "germination", "stage_order": 1, "height_cm_min": 0, "height_cm_max": 3, "description": "Direct sow; does not transplant well", "duration_days": 10 },
+        { "stage_name": "seedling", "stage_order": 2, "height_cm_min": 3, "height_cm_max": 15, "description": "Feathery fronds emerge", "duration_days": 21 },
+        { "stage_name": "vegetative", "stage_order": 3, "height_cm_min": 15, "height_cm_max": 120, "description": "Tall upright growth; bulb swells at base for Florence fennel", "duration_days": 50 },
+        { "stage_name": "flowering", "stage_order": 4, "height_cm_min": 90, "height_cm_max": 180, "description": "Flat yellow flower umbels; attracts beneficial insects", "duration_days": 30 }
+      ],
+      "companions": [],
+      "planting_window": {
+        "can_direct_sow": true,
+        "can_transplant": false,
+        "direct_sow_weeks_from_last_frost": 0,
+        "transplant_weeks_from_last_frost": null,
+        "direct_sow_weeks_from_first_frost": null,
+        "transplant_weeks_from_first_frost": null,
+        "min_soil_temp_f": 50,
+        "weeks_before_first_frost_to_harvest": 12
+      }
+    }
+  ]
+}

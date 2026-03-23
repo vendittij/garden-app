@@ -19,7 +19,8 @@
       "package": "com.garden.app"
     },
     "plugins": [
-      "expo-sqlite"
+      "expo-sqlite",
+      "expo-asset"
     ]
   }
 }
